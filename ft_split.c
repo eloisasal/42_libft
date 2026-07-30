@@ -78,15 +78,17 @@ static int	fill_split(char const *s, char c, char **result)
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
+	char	*str;
 	int		words;
 
 	if (!s)
 		return (NULL);
-	words = count_words(s, c);
+	str = (char *)s;
+	words = count_words(str, c);
 	result = malloc(sizeof(char *) * (words + 1));
 	if (!result)
 		return (NULL);
-	if (!fill_split(s, c, result))
+	if (!fill_split(str, c, result))
 		return (NULL);
 	return (result);
 }
