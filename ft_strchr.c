@@ -11,20 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 /*#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>*/
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	char	*dup;
+
+	dup = (char *) s;
+	while (*dup)
 	{
-		if (*s == (char)c)
-			return ((char *)s);
-		s++;
+		if (*dup == (char)c)
+			return ((char *)dup);
+		dup++;
 	}
-	if (*s == (char)c)
-		return ((char *)s);
+	if (*dup == (char)c)
+		return ((char *)dup);
 	return (NULL);
 }
 /*int	main(void)
